@@ -35,7 +35,7 @@
                 </li>
             </ul>
             <!-- end nav -->
-            <div class="search-btn">
+            <div class="search-btn js-buy-ticket">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
@@ -49,6 +49,90 @@
         </div>
 
         <div id="content">
+            <!-- The band -->
+            <div class="content-section">
+                <h2 class="section-heading">THE BAND</h2>
+                <p class="section-sub-heading">We love music</p>
+                <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="member-list">
+                    <div class="member">
+                        <p class="name">Name</p>
+                        <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="name" class="img">
+                    </div>
+
+                    <div class="member">
+                        <p class="name">Name</p>
+                        <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="name" class="img">
+                    </div>
+
+                    <div class="member">
+                        <p class="name">Name</p>
+                        <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="name" class="img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOUR DATES -->
+            <div class="tour-section">
+                <div class="content-section">
+                    <h2 class="section-heading">TOUR DATES</h2>
+                    <p class="section-sub-heading">Remember to book your tickets!</p>
+                </div>
+
+                <div class="sold">
+                    <p class="content-text">September <span>Sold out</span></p>
+                    <p class="content-text">October <span>Sold out</span></p>
+                    <p class="content-text">November <i>3</i></p>
+                </div>
+
+                <div class="tickets">
+                    <div class="ticket">
+                        <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="img" class="img-ticket">
+                        <h3 class="content-ticket">New York</h3>
+                        <p class="sub-content-ticket">Fri 27 Nov 2016</p>
+                        <p class="text-ticket">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <div class="ticket-btn js-buy-ticket">Buy Tickets</div>
+                    </div>
+
+                    <div class="ticket">
+                        <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="img" class="img-ticket">
+                        <h3 class="content-ticket">New York</h3>
+                        <p class="sub-content-ticket">Fri 27 Nov 2016</p>
+                        <p class="text-ticket">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <div class="ticket-btn js-buy-ticket">Buy Tickets</div>
+                    </div>
+
+                    <div class="ticket">
+                        <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="img" class="img-ticket">
+                        <h3 class="content-ticket">New York</h3>
+                        <p class="sub-content-ticket">Fri 27 Nov 2016</p>
+                        <p class="text-ticket">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <div class="ticket-btn js-buy-ticket">Buy Tickets</div>
+                    </div>
+
+                </div>
+            </div>
+           
+            <!-- Contact -->
+            <div class="content-section">
+                <h2 class="section-heading">CONTACT</h2>
+                <p class="section-sub-heading">Fan? Drop a note!</p>
+            </div>
+
+            <div class="contact-section">
+                <div class="contact">    
+                    <p class="text"><i class="fa-solid fa-location-dot"></i>Chicago, US</p>
+                    <p class="text"><i class="fa-solid fa-phone"></i>Phone: +00151515</p>
+                    <p class="text"><i class="fa-solid fa-envelope"></i>Email: mail@gmail.com</p>
+                </div>
+                <div class="form-contact">
+                    <input type="text" placeholder="Name" class = 'input-btn'> <input type="text" placeholder="Email"><br>
+                    <input type="" placeholder="Message">
+                    <div class="send-btn">
+                        SEND
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -56,6 +140,58 @@
             
         </div>
     </div>
-    
+
+    <div class="modal modal-open">
+        <div class="modal-container" style="">
+                <div class="modal-close" id="modal-close" >
+                    X
+                </div>
+
+            <div class="modal-header">
+                <h1 class="modal-header-text">
+                    Tickets
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <label for="quantity" class="modal-label">
+                    Tickets - 15$ per person
+                </label><br>
+                <input id = 'quantity' type="text" class="modal-input" placeholder ="How many?"><br>
+
+                <label for="quantity_" class="modal-label">
+                    Send to
+                </label><br>
+
+                <input id = 'quantity_' type="email" class="modal-input" placeholder ="Enter email"><br>
+
+                <div class="modal-btn js-buy-ticket">Pay</div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.modal')
+        const modalClose = document.getElementById('modal-close')
+
+        modal.classList.remove('modal-open');
+        function showTicket(){
+            modal.classList.add('modal-open');
+        }
+
+        function removeTicket(){
+            modal.classList.remove('modal-open')
+        }
+
+        for (const buyBtn of buyBtns){
+            buyBtn.addEventListener('click', showTicket);
+        }
+
+        modalClose.addEventListener('click', removeTicket);
+
+    </script>
 </body>
 </html>
